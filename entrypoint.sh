@@ -10,8 +10,8 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 
-GIST_URL="https://gist.github.com/MaximDevoir/c269b8bd60e1fc966e37a555441f5da2"
-ISSUES_URL="TODO:"
+GIST_URL="https://github.com/MaximDevoir/steam-fix"
+ISSUES_URL="https://github.com/MaximDevoir/steam-fix/issues"
 
 # Follows semi-semver spec. Uses ABBCC format where A is major version, BB is
 # minor, and CC is patch. BB and CC must be exactly 2 digits long. Otherwise,
@@ -19,7 +19,7 @@ ISSUES_URL="TODO:"
 # up-to-date.
 CURRENT_VERSION=$(head -n 1 "$DIR"/version)
 
-SCRIPT_VERSION_URL="https://gist.githubusercontent.com/MaximDevoir/c269b8bd60e1fc966e37a555441f5da2/raw/a46f650c93ee9d2caa4aa0dfda8e3f29b51bf6d3/version"
+SCRIPT_VERSION_URL="https://raw.githubusercontent.com/MaximDevoir/steam-fix/master/version"
 
 echo "Checking if software is up-to-date"
 echo ""
@@ -117,28 +117,33 @@ fix_steam () {
 
 # The messsages to run after `fix_steam`
 fixed_steam () {
-  echo "------------"
-  echo "------------"
-  echo "------------"
-  echo -e "\e[0;32mPlease READ:\033[0m"
-  echo "A backup of the removed files has been made at:"
-  echo "$DIR/backup"
+  echo -e "\e[0;31m---------------------------------\033[0m"
+  echo -e "\e[0;37m---------------------------------\033[0m"
+  echo -e "\e[0;34m---------------------------------\033[0m"
+  echo -e "\e[0;32m📖 📖 Please READ 📖 📖\033[0m"
+  echo "📘 A backup of the removed files has been made at:"
+  echo "📘 $DIR/backup"
   echo ""
 
-  echo "If you encounter any problems with steam or any games, you can try restoring the files by:"
+  echo "📗 If you encounter any problems with steam or any games, you can try restoring the files by:"
 
-  echo " - Restoring the deleted files from Trash (recommended)"
-  echo " - Copying the backup files into $HOME/.local/share/Steam"
-  echo " - Reinstalling Steam (which restores Steam's libstdc and libgcc files)"
-  echo " - Verifying the integrity of a game (which restores libgcc and libstdc files)"
-
-  echo ""
-  echo "Report any issues to $ISSUES_URL"
+  echo "📗 - Restoring the deleted files from Trash (recommended)"
+  echo "📗 - Copying the backup files into $HOME/.local/share/Steam"
+  echo "📗 - Reinstalling Steam (which restores Steam's libstdc and libgcc files)"
+  echo "📗 - Verifying the integrity of a game (which restores libgcc and libstdc files)"
 
   echo ""
+  echo "📗 Report any issues to $ISSUES_URL"
+
   echo ""
-  echo "If this software has been useful, give the repo a star"
-  echo "$GIST_URL"
+  echo ""
+  echo "📖 Steam and Steam Games may automatically re-add libstdc and libgcc file with each update"
+  echo "📖 As such, the software must be run with each of their updates"
+
+  echo ""
+  echo "⭐ If this utility has been useful, consider give us a ⭐"
+  echo "⭐ ⭐ $GIST_URL ⭐ ⭐"
+  echo "⭐ Goodbye ⭐"
 }
 
 
