@@ -148,5 +148,7 @@ else
   echo "Software up to date"
   echo "Your version: $CURRENT_VERSION"
   echo "Latest version: $REMOTE_LATEST_VERSION"
+
+  first_message
 fi
 
