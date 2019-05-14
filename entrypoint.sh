@@ -10,8 +10,8 @@ done
 DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 
 
-GIST_URL="https://gist.github.com/MaximDevoir/c269b8bd60e1fc966e37a555441f5da2"
-ISSUES_URL="TODO:"
+GIST_URL="https://github.com/MaximDevoir/steam-fix"
+ISSUES_URL="https://github.com/MaximDevoir/steam-fix/issues"
 
 # Follows semi-semver spec. Uses ABBCC format where A is major version, BB is
 # minor, and CC is patch. BB and CC must be exactly 2 digits long. Otherwise,
@@ -19,7 +19,7 @@ ISSUES_URL="TODO:"
 # up-to-date.
 CURRENT_VERSION=$(head -n 1 "$DIR"/version)
 
-SCRIPT_VERSION_URL="https://gist.githubusercontent.com/MaximDevoir/c269b8bd60e1fc966e37a555441f5da2/raw/a46f650c93ee9d2caa4aa0dfda8e3f29b51bf6d3/version"
+SCRIPT_VERSION_URL="https://raw.githubusercontent.com/MaximDevoir/steam-fix/master/version"
 
 echo "Checking if software is up-to-date"
 echo ""
