@@ -5,7 +5,7 @@
 
 ## Getting Started
 
-Begin by downloading the latest release from [releases](https://github.com/MaximDevoir/steam-fix/issues), or by `git
+Begin by downloading the latest release from [releases](https://github.com/MaximDevoir/steam-fix/releases), or by `git
 cloning` the repository.
 
 ### Usage
@@ -29,7 +29,7 @@ If you downloaded the software via `git`, you may update by using `git pull`
 
 #### via Download
 
-Download the latest [release](https://github.com/MaximDevoir/steam-fix/issues) and replace your old files with the
+Download the latest [release](https://github.com/MaximDevoir/steam-fix/releases) and replace your old files with the
 new files.
 
 ## License
