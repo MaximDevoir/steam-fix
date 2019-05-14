@@ -13,58 +13,11 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null 2>&1 && pwd )"
 GIST_URL="https://github.com/MaximDevoir/steam-fix"
 ISSUES_URL="https://github.com/MaximDevoir/steam-fix/issues"
 
-# Follows semi-semver spec. Uses ABBCC format where A is major version, BB is
-# minor, and CC is patch. BB and CC must be exactly 2 digits long. Otherwise,
-# the script will do incorrect calculations for checking if software is
-# up-to-date.
-CURRENT_VERSION=$(head -n 1 "$DIR"/version)
+make_backup_dir () {
+  mkdir -p "$DIR/backup"
+}
 
-SCRIPT_VERSION_URL="https://raw.githubusercontent.com/MaximDevoir/steam-fix/master/version"
-
-echo "Checking if software is up-to-date"
-echo ""
-
-REMOTE_LATEST_VERSION=$(wget $SCRIPT_VERSION_URL -q -O -)
-
-re='^[0-9]+$'
-if ! [[ $REMOTE_LATEST_VERSION =~ $re ]] ; then
-  echo "Error: Couldn't fetch the latest version."
-  echo "Try checking if you are connected to the internet and rerun the script"
-  echo "Or, verify that you can load $SCRIPT_VERSION_URL"
-  echo ""
-  echo "Would you like to ignore checking the latest version"
-  select yn in "Yes, ignore checking if I have the latest version" "No, quit now"; do
-      case $yn in
-          Yes* ) first_message; break;;
-          No* ) echo "You selected no; exiting now" && exit;;
-      esac
-  done
-fi
-
-
-if (( REMOTE_LATEST_VERSION > CURRENT_VERSION )); then
-  echo "Software is out-of-date."
-  echo "Your version: $CURRENT_VERSION"
-  echo "Latest version: $REMOTE_LATEST_VERSION"
-
-  echo "Please update your scripts at $GIST_URL"
-
-  echo ""
-
-  echo "Would you like to ignore updating to the current version (not recommended)"
-  select yn in "Yes, ignore updating" "No, I will update the scripts"; do
-      case $yn in
-          Yes* ) first_message; break;;
-          No* ) echo "You selected no; visit $GIST_URL to update your scripts; exiting now" && exit;;
-      esac
-  done
-else
-  echo "Software up to date"
-  echo "Your version: $CURRENT_VERSION"
-  echo "Latest version: $REMOTE_LATEST_VERSION"
-fi
-
-echo ""
+make_backup_dir
 
 first_message () {
   log_about
@@ -146,11 +99,54 @@ fixed_steam () {
   echo "⭐ Goodbye ⭐"
 }
 
+# Follows semi-semver spec. Uses ABBCC format where A is major version, BB is
+# minor, and CC is patch. BB and CC must be exactly 2 digits long. Otherwise,
+# the script will do incorrect calculations for checking if software is
+# up-to-date.
+CURRENT_VERSION=$(head -n 1 "$DIR"/version)
 
-make_backup_dir () {
-  mkdir -p "$DIR/backup"
-}
+SCRIPT_VERSION_URL="https://raw.githubusercontent.com/MaximDevoir/steam-fix/master/version"
 
-make_backup_dir
+echo "Checking if software is up-to-date"
+echo ""
 
-first_message
+REMOTE_LATEST_VERSION=$(wget $SCRIPT_VERSION_URL -q -O -)
+
+re='^[0-9]+$'
+if ! [[ $REMOTE_LATEST_VERSION =~ $re ]] ; then
+  echo "Error: Couldn't fetch the latest version."
+  echo "Try checking if you are connected to the internet and rerun the script"
+  echo "Or, verify that you can load $SCRIPT_VERSION_URL"
+  echo ""
+  echo "Would you like to ignore checking the latest version"
+  select yn in "Yes, ignore checking if I have the latest version" "No, quit now"; do
+      case $yn in
+          Yes* ) first_message; break;;
+          No* ) echo "You selected no; exiting now" && exit;;
+      esac
+  done
+fi
+
+
+if (( REMOTE_LATEST_VERSION > CURRENT_VERSION )); then
+  echo "Software is out-of-date."
+  echo "Your version: $CURRENT_VERSION"
+  echo "Latest version: $REMOTE_LATEST_VERSION"
+
+  echo "Please update your scripts at $GIST_URL"
+
+  echo ""
+
+  echo "Would you like to ignore updating to the current version (not recommended)"
+  select yn in "Yes, ignore updating" "No, I will update the scripts"; do
+      case $yn in
+          Yes* ) first_message; break;;
+          No* ) echo "You selected no; visit $GIST_URL to update your scripts; exiting now" && exit;;
+      esac
+  done
+else
+  echo "Software up to date"
+  echo "Your version: $CURRENT_VERSION"
+  echo "Latest version: $REMOTE_LATEST_VERSION"
+fi
+
