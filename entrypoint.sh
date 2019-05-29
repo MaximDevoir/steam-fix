@@ -21,20 +21,8 @@ make_backup_dir
 
 first_message () {
   log_about
-  echo "I have read above and am ready to begin?"
+  echo "Are you ready to start?"
 
-  select yn in "Yes" "No"; do
-      case $yn in
-          Yes ) second_message; break;;
-          No ) echo 'You selected NO; exiting now' && exit;;
-      esac
-  done
-}
-
-second_message () {
-  echo ""
-  echo ""
-  echo "Are you sure?"
   select yn in "Yes" "No"; do
       case $yn in
           Yes ) fix_steam; break;;
