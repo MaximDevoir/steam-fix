@@ -3,6 +3,10 @@
 > Fixes issues with Steam and games on Ubuntu/Linux by removing libstdc++ and
 > libgcc libraries from the Steam folder.
 
+<p align='center'>
+<img src='https://raw.githubusercontent.com/MaximDevoir/steam-fix/gh-assets/usage.gif' width='600' alt='./entrypoint.sh'>
+</p>
+
 ## Getting Started
 
 Begin by downloading the latest release from
