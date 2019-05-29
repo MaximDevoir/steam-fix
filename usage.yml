@@ -1,0 +1,236 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: /bin/zsh -l
+
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: null
+
+  # Export additional ENV variables
+  env:
+    recording: true
+
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 30
+
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+
+  # Quality
+  # 1 - 100
+  quality: 100
+
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: auto
+
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: null
+    style: []
+
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Menlo for Powerline"
+
+  # The size of the font
+  fontSize: 12
+
+  # The height of lines
+  lineHeight: 1
+
+  # The spacing between letters
+  letterSpacing: 0
+
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+
+# Records, feel free to edit them
+records:
+  - delay: 1000
+    content: "\e[01;34m~/Documents/steam-fix\e[00m "
+  - delay: 750
+    content: .
+  - delay: 167
+    content: /
+  - delay: 167
+    content: e
+  - delay: 167
+    content: 'n'
+  - delay: 167
+    content: t
+  - delay: 167
+    content: r
+  - delay: 167
+    content: 'y'
+  - delay: 167
+    content: p
+  - delay: 167
+    content: o
+  - delay: 167
+    content: i
+  - delay: 167
+    content: 'n'
+  - delay: 167
+    content: t
+  - delay: 167
+    content: .
+  - delay: 167
+    content: s
+  - delay: 167
+    content: h
+  - delay: 750
+    content: "\r\n"
+  - delay: 44
+    content: "Checking if software is up-to-date\r\n\r\n"
+  - delay: 700
+    content: "Software up to date\r\nYour version: 13001\r\nLatest version: 13001\r\n\r\nSteam Fixer for Linux Systems\r\n- Maxim Devoir 2019\r\nAvailable at https://github.com/MaximDevoir/steam-fix\r\nReport any issues to https://github.com/MaximDevoir/steam-fix/issues\r\n\r\nThis program removes libstdc++* and libgcc* libraries from\r\n~/.local/share/Steam/\r\n\r\nAre you ready to start?\r\n1) Yes\r\n2) No\r\n#? "
+  - delay: 3500
+    content: '1'
+  - delay: 1250
+    content: "\r\n\r\nFixing steam\r\n\r\nExecuting /bin/bash -e -c ~/Documents/steam-fix/fixSteam.sh\r\n"
+  - delay: 5
+    content: "Fixing Steam AMD driver-related issues\r\nDetecting if Steam is running.\r\n"
+  - delay: 20
+    content: "\r\nDid not detect any running instances of Steam.\r\n\r\nMoving libstdc++ libraries to trash.\r\n"
+  - delay: 20
+    content: "\e[0;35mIgnoring\e[0m .....old/i386/usr/lib/i386-linux-gnu/libstdc++.so.6.0.21\r\n"
+  - delay: 20
+    content: "\e[0;35mIgnoring\e[0m .....old/i386/usr/lib/i386-linux-gnu/libstdc++.so.6\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libstdc++6_5.4.0-7.really.6+steamrt1.2+srt1_i386\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libstdc++6-4.6-pic_4.6.3-1ubuntu5+steamrt1.2+srt1_i386\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libstdc++6-4.6-pic_4.6.3-1ubuntu5+steamrt1.2+srt1_i386.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libstdc++6_5.4.0-7.really.6+steamrt1.2+srt1_i386.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/share/doc/libstdc++6\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/share/doc/libstdc++6-4.6-pic\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/share/gdb/auto-load/usr/lib/i386-linux-gnu/libstdc++.so.6.0.21-gdb.py\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/lib/i386-linux-gnu/libstdc++.so.6.0.21\r\n"
+  - delay: 20
+    content: "\e[0;33mFile does not exist\e[0m ..../i386/usr/lib/i386-linux-gnu/libstdc++.so.6\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/lib/gcc/i686-linux-gnu/4.6/libstdc++_pic.a\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/lib/gcc/i686-linux-gnu/4.6/libstdc++_pic.map\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libstdc++6_5.4.0-7.really.6+steamrt1.2+srt1_amd64.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libstdc++6_5.4.0-7.really.6+steamrt1.2+srt1_amd64\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libstdc++6-4.6-pic_4.6.3-1ubuntu5+steamrt1.2+srt1_amd64.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libstdc++6-4.6-pic_4.6.3-1ubuntu5+steamrt1.2+srt1_amd64\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/share/doc/libstdc++6\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/share/doc/libstdc++6-4.6-pic\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/share/gdb/auto-load/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21-gdb.py\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.21\r\n"
+  - delay: 20
+    content: "\e[0;33mFile does not exist\e[0m ..../amd64/usr/lib/x86_64-linux-gnu/libstdc++.so.6\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/lib/gcc/x86_64-linux-gnu/4.6/libstdc++_pic.a\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/lib/gcc/x86_64-linux-gnu/4.6/libstdc++_pic.map\r\n"
+  - delay: 20
+    content: "\r\nMoving libgcc libraries to trash.\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ...../steamapps/common/game/bin/libgcc_s.so.1\r\n"
+  - delay: 20
+    content: "\e[0;35mIgnoring\e[0m .....old/i386/lib/i386-linux-gnu/libgcc_s.so.1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libgcc1_5.4.0-7.really.6+steamrt1.2+srt1_i386\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/installed/libgcc1_5.4.0-7.really.6+steamrt1.2+srt1_i386.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/share/doc/libgcc1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/usr/share/lintian/overrides/libgcc1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../i386/lib/i386-linux-gnu/libgcc_s.so.1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libgcc1_5.4.0-7.really.6+steamrt1.2+srt1_amd64.md5\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/installed/libgcc1_5.4.0-7.really.6+steamrt1.2+srt1_amd64\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/share/doc/libgcc1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/usr/share/lintian/overrides/libgcc1\r\n"
+  - delay: 20
+    content: "\e[32mMoved to trash\e[0m ..../amd64/lib/x86_64-linux-gnu/libgcc_s.so.1\r\n"
+  - delay: 2500
+    content: "\r\nFinished.\r\n\e[0;31m---------------------------------\e[0m\r\n\e[0;37m---------------------------------\e[0m\r\n\e[0;34m---------------------------------\e[0m\r\n\e[0;32m\U0001F4D6 \U0001F4D6 FINISHED \U0001F4D6 \U0001F4D6\e[0m\r\n\U0001F4D8 A backup of the removed files has been made at:\r\n\U0001F4D8 ~/Documents/projects/steam-fix/backup\r\n\r\n\U0001F4D7 If you encounter any problems with steam or any games, you can try restoring the files by:\r\n\U0001F4D7 - Restoring the deleted files from Trash (recommended)\r\n\U0001F4D7 - Copying the backup files into ~/.local/share/Steam\r\n\U0001F4D7 - Reinstalling Steam (which restores Steam's libstdc and libgcc files)\r\n\U0001F4D7 - Verifying the integrity of a game (which restores libgcc and libstdc files)\r\n\r\n\U0001F4D7 Report any issues to https://github.com/MaximDevoir/steam-fix/issues\r\n\r\n\r\n\e[0;35m                      REMINDER                      \e[0m\r\n\U0001F4D6 Steam and games in your library may automatically\r\n\U0001F4D6 re-add libstdc and libgcc file with updates or integrity checks.\r\n\U0001F4D6 As such, the software must be run with each of their updates\r\n\r\n⭐ If this utility has been useful, consider give us a ⭐\r\n⭐ ⭐ https://github.com/MaximDevoir/steam-fix ⭐ ⭐\r\n\U0001F44D Goodbye \U0001F44D\r\n"
+  - delay: 20
+    content: "\e[01;34m~/Documents/steam-fix\e[00m "
+  - delay: 5000
+    content: " "
