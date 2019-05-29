@@ -21,20 +21,8 @@ make_backup_dir
 
 first_message () {
   log_about
-  echo "I have read above and am ready to begin?"
+  echo "Are you ready to start?"
 
-  select yn in "Yes" "No"; do
-      case $yn in
-          Yes ) second_message; break;;
-          No ) echo 'You selected NO; exiting now' && exit;;
-      esac
-  done
-}
-
-second_message () {
-  echo ""
-  echo ""
-  echo "Are you sure?"
   select yn in "Yes" "No"; do
       case $yn in
           Yes ) fix_steam; break;;
@@ -73,7 +61,7 @@ fixed_steam () {
   echo -e "\e[0;31m---------------------------------\033[0m"
   echo -e "\e[0;37m---------------------------------\033[0m"
   echo -e "\e[0;34m---------------------------------\033[0m"
-  echo -e "\e[0;32m📖 📖 Please READ 📖 📖\033[0m"
+  echo -e "\e[0;32m📖 📖 FINISHED 📖 📖\033[0m"
   echo "📘 A backup of the removed files has been made at:"
   echo "📘 $DIR/backup"
   echo ""
@@ -90,13 +78,15 @@ fixed_steam () {
 
   echo ""
   echo ""
-  echo "📖 Steam and Steam Games may automatically re-add libstdc and libgcc file with each update"
+  echo -e "\e[0;35m                      REMINDER                      \033[0m"
+  echo "📖 Steam and games in your library may automatically"
+  echo "📖 re-add libstdc and libgcc file with updates or integrity checks."
   echo "📖 As such, the software must be run with each of their updates"
 
   echo ""
   echo "⭐ If this utility has been useful, consider give us a ⭐"
   echo "⭐ ⭐ $GIST_URL ⭐ ⭐"
-  echo "⭐ Goodbye ⭐"
+  echo "👍 Goodbye 👍"
 }
 
 # Follows semi-semver spec. Uses ABBCC format where A is major version, BB is
